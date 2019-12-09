@@ -1,0 +1,269 @@
+@import "../../node_modules/bootstrap/scss/bootstrap"; // Bootstrap lib importing
+@import url('https://fonts.googleapis.com/css?family=Cardo|Open+Sans|Raleway&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+
+// .container {
+// 	padding: 0;
+// }
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.1);
+	height: 103px;
+    position: absolute;
+	top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+	nav {
+		display: flex;
+
+		> ul.nav-list {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			> li.nav-list__item {
+				float: left;
+				margin-left: 29px;
+
+				&:first-child {
+					margin-left: none;
+				}
+
+				> a.nav-list__link {
+					color: #fff;
+					font-weight: 600;
+					font-family: Raleway;
+					font-style: normal;
+					font-size: 13px;
+
+					&:hover {
+						text-decoration: none;
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+}
+
+.button-primary {
+	padding: 15px 50px;
+	background-color: #E84545;
+	color: #fff;
+	text-align: center;
+	font-family: Raleway;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: none;
+		opacity: .8;
+		color: #fff;
+	}
+}
+
+main {
+	section.hero-image {
+		width: 100%;
+		min-height: 475px;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;	
+		background-image: url(/img/headerBg.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+		> .hero-image__content {
+			text-align: center;
+
+			> .hero-image__title {
+				color: white;
+				font-family: Open Sans;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 65px;
+				line-height: 71px;
+			}
+
+			> .hero-image__subtitle {
+				margin-top: 20px;
+				font-family: Raleway;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 22px;
+				line-height: 33px;
+				color: white;
+				max-width: 950px;
+			}
+
+			> .btn-wrapper {
+				margin-top: 75.7px;
+			}
+		}
+	}
+
+	section#features {
+		padding: 96px 0;
+
+		> .features-set {
+			display: flex;
+			flex-wrap: wrap;
+
+			> .features-set__feature {
+				text-align: center;
+				padding: 32px;
+
+				> .feature__icon {
+
+				}
+
+				> .feature__title {
+					margin-top: 30px;
+					text-transform: uppercase;
+					font-family: Raleway;
+					font-weight: 600;
+					font-size: 14px;
+				}
+
+				> .feature__description {
+					margin-top: 7.5px;
+					font-family: Raleway;
+					font-size: 14px;
+					line-height: 21px;
+				}
+			}
+		}
+	}
+
+	section#works {
+		.works__row {
+			justify-content: space-between;
+
+			&:not(:first-child) {
+				margin-top: 1px;
+			}
+
+			> .works__work-block {
+				position: relative;
+				flex: 0 0 calc(25% - 1px);
+				padding: 0;
+
+				> img {
+					width: 100%;
+					height: 100%;
+				}
+
+				> .hoverLayer {
+					position: absolute;
+					display: none;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(232, 69, 69, 0.9);
+
+					> .hoverLayer__title {
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+
+					> .hoverLayer__subtitle {
+						margin-top: 12px;
+					}
+				}
+
+				> .hoverLayer__title, .hoverLayer__subtitle {
+					display: none;
+				}
+
+				&:hover {
+					> .hoverLayer {
+						display: flex;
+						
+						> .hoverLayer__title, .hoverLayer__subtitle {
+							display: block;
+							font-family: Raleway;
+							font-size: 14px;
+							color: white;
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	section#team {
+		padding: 100px 0;
+		
+		.team-member {
+
+			> .team-member__photo {
+				> img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			> .team-member__name {
+				margin-top: 20px;
+				font-family: Raleway;
+				font-size: 22px;
+			}
+
+			> .team-member__position {
+				margin-top: 10px;
+				font-family: Raleway;
+				font-size: 13px;
+				color: #E84545;
+			}
+
+			> .team-member__description {
+				margin-top: 30px;
+				font-family: Raleway;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 14px;
+
+			}
+
+			> .team-member__socialButtons {
+				display: flex;
+
+				> a {
+					width: 44px;
+					height: 44px;
+					line-height: 42px;
+					text-align: center;
+					border: 1px solid #E8ECEE;
+					margin-top: 38.5px;
+					transition: all .5s ease-out;
+
+					&:hover {
+						background-color: #E8ECEE;
+						color: #fff;
+					}
+
+					&:not(:first-child) {
+						margin-left: 2px;
+					}
+
+				}
+			}
+		}
+	}
+}
