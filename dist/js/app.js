@@ -24,7 +24,24 @@
 // }
 // fetch("https://jsonplaceholder.typicode.com/photos")
 // 	.then(response => console.log(response));
+let headers = new Headers();
+
+headers.set('Authorization', 'Basic NWQzYzkxYWRlMDc3ODdiZDUzYzE5YmYzYTEzMTFiZjI6YmZmZDc0MmJlMGI2NjRhZDBkMjFjY2UyYjI2MjEwYWQ=');// + btoa('5d3c91ade07787bd53c19bf3a1311bf2' + ":" + 'bffd742be0b664ad0d21cce2b26210ad'));
+console.log(headers);
+async function getUserAsync() 
+{
+  let response = await fetch('https://bedre-cbd.myshopify.com/admin/api/2019-10/customers.json', {
+    mode: 'cors',
+    method: 'GET',
+    headers: headers
+  });
+  console.log(response);
+  let data = await response.json()
+  return data;
+}
+console.log(getUserAsync());
 window.onload = function () {
+
   function featuresOverfill() {
     var featuresTitle = document.querySelectorAll('.feature__title');
     var featuresIcon = document.querySelectorAll('.feature__icon > img');
