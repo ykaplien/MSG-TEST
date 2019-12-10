@@ -68,16 +68,21 @@ window.onload = () => {
 	const findOutMoreButton = document.getElementById('findOutMore');
 
 	findOutMoreButton.addEventListener('click', featuresOverfill, false);
-	  var slider = tns({
+  	let slider = tns({
 	    container: '.testimonials-left',
 	    items: 1,
 	    slideBy: 'page',
-	    navContainer: '.testimonials-controls'
+	    navContainer: '.testimonials-controls',
+	    controls: false
 	  });
-	var slider2 = tns({
+	let slider2 = tns({
 	    container: '.testimonials-right',
 	    items: 1,
-	    slideBy: 'page',
-	    navContainer: '.testimonials-controls'
+	    // slideBy: 'page',
+	    navContainer: '.testimonials-controls',
+		animateIn: "fadeIn",
+		animateOut: "fadeOut",
+	    controls: false,
+	    axis: 'vertical'
 	  });
 }

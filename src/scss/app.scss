@@ -7,6 +7,47 @@ html {
 	scroll-behavior: smooth;
 }
 
+.Button-primary {
+	display: inline-block;
+	padding: 15px 50px;
+	background-color: #E84545;
+	color: #fff;
+	text-align: center;
+	font-family: Raleway;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: none;
+		opacity: .8;
+		color: #fff;
+	}
+}
+
+.SocialButtons {
+	display: flex;
+
+	> a {
+		width: 44px;
+		height: 44px;
+		line-height: 42px;
+		text-align: center;
+		border: 1px solid #E8ECEE;
+		margin-top: 38.5px;
+		transition: all .5s ease-out;
+
+		&:hover {
+			background-color: #E8ECEE;
+			color: #fff;
+		}
+
+		&:not(:first-child) {
+			margin-left: 2px;
+		}
+	}
+}
+
 header {
 	width: 100%;
 	display: flex;
@@ -52,23 +93,6 @@ header {
 	}
 }
 
-.button-primary {
-	padding: 15px 50px;
-	background-color: #E84545;
-	color: #fff;
-	text-align: center;
-	font-family: Raleway;
-	font-weight: 600;
-	font-size: 13px;
-	text-transform: uppercase;
-
-	&:hover {
-		text-decoration: none;
-		opacity: .8;
-		color: #fff;
-	}
-}
-
 main {
 	section.hero-image {
 		width: 100%;
@@ -83,6 +107,7 @@ main {
 		background-position: center center;
 
 		> .hero-image__content {
+			padding-top: 5.6vh;
 			text-align: center;
 
 			> .hero-image__title {
@@ -105,7 +130,8 @@ main {
 				max-width: 950px;
 			}
 
-			> .btn-wrapper {
+			> a.hero-image__button {
+				@extend .Button-primary;
 				margin-top: 75.7px;
 			}
 		}
@@ -240,46 +266,120 @@ main {
 			}
 
 			> .team-member__socialButtons {
-				display: flex;
-
-				> a {
-					width: 44px;
-					height: 44px;
-					line-height: 42px;
-					text-align: center;
-					border: 1px solid #E8ECEE;
-					margin-top: 38.5px;
-					transition: all .5s ease-out;
-
-					&:hover {
-						background-color: #E8ECEE;
-						color: #fff;
-					}
-
-					&:not(:first-child) {
-						margin-left: 2px;
-					}
-
+				@extend SocialButtons;
 				}
 			}
 		}
 	}
 
 	section#testimonials {
-		
-		.testimonials-controls {
+		padding: 0;
 
-			> .testimonials-controls__item {
+		.left-col {
+			> .testimonials-left {
+				> div {
 
-				width: 16px;
-				height: 16px;
-				border-radius: 50%;
-				background-color: rgba(0, 0, 0, .2);
-
-				&.tns-nav-active {
-					background-color: rgba(0, 0, 0, 1);
+					> img.testimonial__image
+					{
+						width: 100% !important;
+						height: auto !important;
+					}
 				}
 			}
 		}
+
+		.right-col {
+			background-color: #53354A;
+
+			.testimonial__data {
+				width: 100%;
+				height: 100%;
+				color: #fff;
+
+				> .testimonial__text {
+					font-family: Cardo;
+					font-style: italic;
+					font-size: 36px;
+					line-height: 42px;
+				}
+
+				> .testimonial__text {
+					
+				}
+			}
+		}
+
+		.testimonials-controls {
+			display: flex;
+
+			> .testimonials-controls__item {
+				outline: none;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, .2);
+
+				&.tns-nav-active {
+					background-color: rgba(255, 255, 255, 1);
+				}
+			}
+		}
+	}
+
+	section#download {
+		padding: 100px 0;
+		text-align: center;
+		font-family: Raleway;
+		line-height: 21px;
+
+		> .download__title {
+			font-weight: 300;
+			font-size: 28px;
+		}
+
+		> .download__subtitle {
+			margin-top: 10px;
+			font-weight: bold;
+			font-size: 13px;
+			text-transform: uppercase;
+		}
+
+		> .download__button {
+			margin-top: 32px;
+		}
+	}
+}
+
+footer {
+	.footer__content {
+		background-color: #3A3E64;
+		height: 250px;
+		padding-top: 66px;
+
+		.footer__content-block {
+			text-align: center;
+			font-family: Raleway;
+			font-size: 14px;
+			color: #fff;
+
+			> .content-block__title {
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+			> .content-block__info {
+				margin-top: 12px;
+				line-height: 22px;
+			}
+
+			> .content-block__social-icons {
+				@extend .SocialButtons;
+			}
+		}
+	}
+
+	> .footer__spacer {
+		height: 96px;
+		background-color: #313454;
 	}
 }

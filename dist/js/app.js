@@ -73,12 +73,17 @@ window.onload = function () {
     container: '.testimonials-left',
     items: 1,
     slideBy: 'page',
-    navContainer: '.testimonials-controls'
+    navContainer: '.testimonials-controls',
+    controls: false
   });
   var slider2 = tns({
     container: '.testimonials-right',
     items: 1,
-    slideBy: 'page',
-    navContainer: '.testimonials-controls'
+    // slideBy: 'page',
+    navContainer: '.testimonials-controls',
+    animateIn: "fadeIn",
+    animateOut: "fadeOut",
+    controls: false,
+    axis: 'vertical'
   });
 };

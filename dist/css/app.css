@@ -10083,6 +10083,21 @@ a.text-dark:hover, a.text-dark:focus {
 html {
   scroll-behavior: smooth; }
 
+.button-primary, main section.hero-image > .hero-image__content > a.hero-image__button {
+  display: inline-block;
+  padding: 15px 50px;
+  background-color: #E84545;
+  color: #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase; }
+  .button-primary:hover, main section.hero-image > .hero-image__content > a.hero-image__button:hover {
+    text-decoration: none;
+    opacity: .8;
+    color: #fff; }
+
 header {
   width: 100%;
   display: -webkit-box;
@@ -10135,20 +10150,6 @@ header {
             text-decoration: none;
             color: #000; }
 
-.button-primary {
-  padding: 15px 50px;
-  background-color: #E84545;
-  color: #fff;
-  text-align: center;
-  font-family: Raleway;
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase; }
-  .button-primary:hover {
-    text-decoration: none;
-    opacity: .8;
-    color: #fff; }
-
 main section.hero-image {
   width: 100%;
   min-height: 475px;
@@ -10175,6 +10176,7 @@ main section.hero-image {
   background-repeat: no-repeat;
   background-position: center center; }
   main section.hero-image > .hero-image__content {
+    padding-top: 5.6vh;
     text-align: center; }
     main section.hero-image > .hero-image__content > .hero-image__title {
       color: white;
@@ -10192,7 +10194,7 @@ main section.hero-image {
       line-height: 33px;
       color: white;
       max-width: 950px; }
-    main section.hero-image > .hero-image__content > .btn-wrapper {
+    main section.hero-image > .hero-image__content > a.hero-image__button {
       margin-top: 75.7px; }
 
 main section#features {
@@ -10304,13 +10306,13 @@ main section#team {
     font-style: normal;
     font-weight: normal;
     font-size: 14px; }
-  main section#team .team-member > .team-member__socialButtons {
+  main section#team .team-member > .team-member__socialButtons, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex; }
-    main section#team .team-member > .team-member__socialButtons > a {
+    main section#team .team-member > .team-member__socialButtons > a, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a {
       width: 44px;
       height: 44px;
       line-height: 42px;
@@ -10321,18 +10323,77 @@ main section#team {
       -o-transition: all .5s ease-out;
       -moz-transition: all .5s ease-out;
       transition: all .5s ease-out; }
-      main section#team .team-member > .team-member__socialButtons > a:hover {
+      main section#team .team-member > .team-member__socialButtons > a:hover, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a:hover, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a:hover {
         background-color: #E8ECEE;
         color: #fff; }
-      main section#team .team-member > .team-member__socialButtons > a:not(:first-child) {
+      main section#team .team-member > .team-member__socialButtons > a:not(:first-child), main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a:not(:first-child), footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a:not(:first-child) {
         margin-left: 2px; }
 
-main section#testimonials .testimonials-controls > .testimonials-controls__item {
-  width: 16px;
-  height: 16px;
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2); }
-  main section#testimonials .testimonials-controls > .testimonials-controls__item.tns-nav-active {
-    background-color: black; }
+main section#testimonials {
+  padding: 0; }
+  main section#testimonials .left-col > .testimonials-left > div > img.testimonial__image {
+    width: 100% !important;
+    height: auto !important; }
+  main section#testimonials .right-col {
+    background-color: #53354A; }
+    main section#testimonials .right-col .testimonial__data {
+      width: 100%;
+      height: 100%;
+      color: #fff; }
+      main section#testimonials .right-col .testimonial__data > .testimonial__text {
+        font-family: Cardo;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 42px; }
+  main section#testimonials .testimonials-controls {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex; }
+    main section#testimonials .testimonials-controls > .testimonials-controls__item {
+      outline: none;
+      width: 16px;
+      height: 16px;
+      -webkit-border-radius: 50%;
+         -moz-border-radius: 50%;
+              border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2); }
+      main section#testimonials .testimonials-controls > .testimonials-controls__item.tns-nav-active {
+        background-color: white; }
+
+main section#download {
+  padding: 100px 0;
+  text-align: center;
+  font-family: Raleway;
+  line-height: 21px; }
+  main section#download > .download__title {
+    font-weight: 300;
+    font-size: 28px; }
+  main section#download > .download__subtitle {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase; }
+  main section#download > .download__button {
+    margin-top: 32px; }
+
+footer .footer__content {
+  background-color: #3A3E64;
+  height: 250px;
+  padding-top: 66px; }
+  footer .footer__content .footer__content-block {
+    text-align: center;
+    font-family: Raleway;
+    font-size: 14px;
+    color: #fff; }
+    footer .footer__content .footer__content-block > .content-block__title {
+      font-weight: 600;
+      text-transform: uppercase; }
+    footer .footer__content .footer__content-block > .content-block__info {
+      margin-top: 12px;
+      line-height: 22px; }
+
+footer > .footer__spacer {
+  height: 96px;
+  background-color: #313454; }
