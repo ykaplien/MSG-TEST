@@ -10083,7 +10083,7 @@ a.text-dark:hover, a.text-dark:focus {
 html {
   scroll-behavior: smooth; }
 
-.button-primary, main section.hero-image > .hero-image__content > a.hero-image__button {
+.Button-primary, main section.hero-image > .hero-image__content > a.hero-image__button, main section#download > .download__button {
   display: inline-block;
   padding: 15px 50px;
   background-color: #E84545;
@@ -10093,10 +10093,33 @@ html {
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase; }
-  .button-primary:hover, main section.hero-image > .hero-image__content > a.hero-image__button:hover {
+  .Button-primary:hover, main section.hero-image > .hero-image__content > a.hero-image__button:hover, main section#download > .download__button:hover {
     text-decoration: none;
     opacity: .8;
     color: #fff; }
+
+.SocialButtons, main section#team .team-member > .team-member__socialButtons, footer .footer__content .footer__content-block > .content-block__social-icons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .SocialButtons > a, main section#team .team-member > .team-member__socialButtons > a, footer .footer__content .footer__content-block > .content-block__social-icons > a {
+    width: 44px;
+    height: 44px;
+    line-height: 42px;
+    text-align: center;
+    border: 1px solid #E8ECEE;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    transition: all .2s ease-out; }
+    .SocialButtons > a:hover, main section#team .team-member > .team-member__socialButtons > a:hover, footer .footer__content .footer__content-block > .content-block__social-icons > a:hover {
+      border-color: #E84545;
+      background-color: #E84545;
+      color: #fff; }
+    .SocialButtons > a:not(:first-child), main section#team .team-member > .team-member__socialButtons > a:not(:first-child), footer .footer__content .footer__content-block > .content-block__social-icons > a:not(:first-child) {
+      margin-left: 2px; }
 
 header {
   width: 100%;
@@ -10306,28 +10329,8 @@ main section#team {
     font-style: normal;
     font-weight: normal;
     font-size: 14px; }
-  main section#team .team-member > .team-member__socialButtons, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex; }
-    main section#team .team-member > .team-member__socialButtons > a, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a {
-      width: 44px;
-      height: 44px;
-      line-height: 42px;
-      text-align: center;
-      border: 1px solid #E8ECEE;
-      margin-top: 38.5px;
-      -webkit-transition: all .5s ease-out;
-      -o-transition: all .5s ease-out;
-      -moz-transition: all .5s ease-out;
-      transition: all .5s ease-out; }
-      main section#team .team-member > .team-member__socialButtons > a:hover, main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a:hover, footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a:hover {
-        background-color: #E8ECEE;
-        color: #fff; }
-      main section#team .team-member > .team-member__socialButtons > a:not(:first-child), main section#team footer .footer__content .footer__content-block.team-member > .content-block__social-icons > a:not(:first-child), footer .footer__content main section#team .footer__content-block.team-member > .content-block__social-icons > a:not(:first-child) {
-        margin-left: 2px; }
+  main section#team .team-member > .team-member__socialButtons > a {
+    margin-top: 38.5px; }
 
 main section#testimonials {
   padding: 0; }
@@ -10393,7 +10396,24 @@ footer .footer__content {
     footer .footer__content .footer__content-block > .content-block__info {
       margin-top: 12px;
       line-height: 22px; }
+    footer .footer__content .footer__content-block > .content-block__social-icons {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+         -moz-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin-top: 20px; }
+      footer .footer__content .footer__content-block > .content-block__social-icons > a {
+        border: 2px solid #fff;
+        -webkit-border-radius: 2px;
+           -moz-border-radius: 2px;
+                border-radius: 2px; }
+        footer .footer__content .footer__content-block > .content-block__social-icons > a:not(:first-child) {
+          margin-left: 4px; }
 
 footer > .footer__spacer {
   height: 96px;
   background-color: #313454; }
+
+#test path {
+  fill: red; }

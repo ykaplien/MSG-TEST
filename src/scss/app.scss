@@ -34,11 +34,11 @@ html {
 		line-height: 42px;
 		text-align: center;
 		border: 1px solid #E8ECEE;
-		margin-top: 38.5px;
-		transition: all .5s ease-out;
+		transition: all .2s ease-out;
 
 		&:hover {
-			background-color: #E8ECEE;
+			border-color: #E84545;
+			background-color: #E84545;
 			color: #fff;
 		}
 
@@ -266,7 +266,10 @@ main {
 			}
 
 			> .team-member__socialButtons {
-				@extend SocialButtons;
+				@extend .SocialButtons;
+
+				> a {
+					margin-top: 38.5px;
 				}
 			}
 		}
@@ -345,6 +348,7 @@ main {
 		}
 
 		> .download__button {
+			@extend .Button-primary;
 			margin-top: 32px;
 		}
 	}
@@ -374,6 +378,17 @@ footer {
 
 			> .content-block__social-icons {
 				@extend .SocialButtons;
+
+				justify-content: center;
+				margin-top: 20px;
+				> a {
+					border: 2px solid #fff;
+					border-radius: 2px;
+
+					&:not(:first-child) {
+						margin-left: 4px;
+					}
+				}
 			}
 		}
 	}
@@ -382,4 +397,8 @@ footer {
 		height: 96px;
 		background-color: #313454;
 	}
+}
+
+#test path {
+	fill: red;
 }
