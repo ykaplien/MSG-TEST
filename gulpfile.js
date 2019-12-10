@@ -11,7 +11,7 @@ async function styles () {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./src/css'))
         .pipe(autoprefixer({
-            cascade: false
+            cascade: true,
         }))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());

@@ -1,3 +1,4 @@
+// import { tns } from "../node_modules/tiny-slider/src/tiny-slider";
 // function getMass () {
 // 	const xhr = new XMLHttpRequest();
 // 	const resultArray = [];
@@ -67,4 +68,16 @@ window.onload = () => {
 	const findOutMoreButton = document.getElementById('findOutMore');
 
 	findOutMoreButton.addEventListener('click', featuresOverfill, false);
+	  var slider = tns({
+	    container: '.testimonials-left',
+	    items: 1,
+	    slideBy: 'page',
+	    navContainer: '.testimonials-controls'
+	  });
+	var slider2 = tns({
+	    container: '.testimonials-right',
+	    items: 1,
+	    slideBy: 'page',
+	    navContainer: '.testimonials-controls'
+	  });
 }
