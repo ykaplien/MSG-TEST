@@ -29,10 +29,11 @@ html {
 	display: flex;
 
 	> a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 44px;
 		height: 44px;
-		line-height: 42px;
-		text-align: center;
 		border: 1px solid #E8ECEE;
 		transition: all .2s ease-out;
 
@@ -232,9 +233,13 @@ main {
 	}
 
 	section#team {
-		padding: 100px 0;
+		padding: 75px 0;
+		display: flex;
+		justify-content: space-between;
 		
 		.team-member {
+			padding-top: 25px;
+			padding-bottom: 25px;
 
 			> .team-member__photo {
 				> img {
@@ -268,9 +273,7 @@ main {
 			> .team-member__socialButtons {
 				@extend .SocialButtons;
 
-				> a {
-					margin-top: 38.5px;
-				}
+				margin-top: 38.5px;
 			}
 		}
 	}
