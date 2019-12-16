@@ -7519,7 +7519,7 @@ main section.hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(/img/headerBg.png);
+  background-image: url(../../img/headerBg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }

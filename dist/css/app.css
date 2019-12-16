@@ -10205,7 +10205,7 @@ main section.hero-image {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/img/headerBg.png);
+  background-image: url(../../img/headerBg.png);
   -webkit-background-size: cover;
      -moz-background-size: cover;
           background-size: cover;
