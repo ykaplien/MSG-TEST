@@ -1,6 +1,9 @@
 "use strict";
 
 window.onload = function () {
+  var menuButton = document.getElementById('menuButton');
+  var findOutMoreButton = document.getElementById('findOutMore');
+
   function featuresOverfill() {
     var featuresTitle = document.querySelectorAll('.feature__title');
     var featuresIcon = document.querySelectorAll('.feature__icon > img');
@@ -17,21 +20,20 @@ window.onload = function () {
       }
     }).then(function (response) {
       return response.json();
-    }) // parse response as JSON
-    .then(function (data) {
-      var cropData = [];
+    }).then(function (data) {
+      var selectedMass = [];
 
       for (var i = 0; i < featuresTitle.length; i++) {
         var _data = data[[Math.floor(Math.random() * data.length)]],
             title = _data.title,
             thumbnailUrl = _data.thumbnailUrl;
-        cropData.push({
+        selectedMass.push({
           title: title,
           thumbnailUrl: thumbnailUrl
         });
       }
 
-      cropData.forEach(function (el, index) {
+      selectedMass.forEach(function (el, index) {
         featuresTitle[index].innerText = el.title;
         featuresIcon[index].src = el.thumbnailUrl;
       });
@@ -40,7 +42,13 @@ window.onload = function () {
     });
   }
 
-  var findOutMoreButton = document.getElementById('findOutMore');
+  function mobileMenu() {
+    var menuList = document.getElementById('menuList');
+    menuList.style.display = menuList.style.display == 'block' ? 'none' : 'block';
+    menuList.classList.toggle('mobileMenu-show');
+  }
+
+  menuButton.addEventListener('click', mobileMenu, false);
   findOutMoreButton.addEventListener('click', featuresOverfill, false);
   var slider = tns({
     container: '.testimonials-left',
