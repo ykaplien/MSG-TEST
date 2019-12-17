@@ -10170,14 +10170,33 @@ header {
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    header nav #menuButton {
+      margin-right: 15px; }
+      header nav #menuButton svg .fill {
+        background-color: #fff; }
+      @media (min-width: 767px) {
+        header nav #menuButton {
+          display: none; } }
+      header nav #menuButton > img {
+        width: 32px;
+        height: 32px; }
     header nav > ul.nav-list {
       margin: 0;
       padding: 0;
       list-style-type: none; }
+      @media (max-width: 767px) {
+        header nav > ul.nav-list {
+          display: none; } }
       header nav > ul.nav-list.mobileMenu-show {
-        background-color: red; }
+        padding-top: 15px; }
         header nav > ul.nav-list.mobileMenu-show li.nav-list__item {
+          margin-left: 0px;
           float: none;
           padding: 10px;
           background-color: rgba(255, 255, 255, 0.1); }
@@ -10194,7 +10213,7 @@ header {
           font-size: 13px; }
           header nav > ul.nav-list > li.nav-list__item > a.nav-list__link:hover {
             text-decoration: none;
-            color: #000; }
+            color: #E84545; }
 
 main section.hero-image {
   width: 100%;
@@ -10334,12 +10353,21 @@ main section#works .works__row {
     margin-top: 1px; }
   main section#works .works__row > .works__work-block {
     position: relative;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 -webkit-calc(25% - 1px);
-       -moz-box-flex: 0;
-        -ms-flex: 0 0 calc(25% - 1px);
-            flex: 0 0 calc(25% - 1px);
     padding: 0; }
+    @media (max-width: 991px) {
+      main section#works .works__row > .works__work-block {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 -webkit-calc(50% - 0.5px);
+           -moz-box-flex: 0;
+            -ms-flex: 0 0 calc(50% - 0.5px);
+                flex: 0 0 calc(50% - 0.5px); } }
+    @media (min-width: 992px) {
+      main section#works .works__row > .works__work-block {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 -webkit-calc(25% - 1px);
+           -moz-box-flex: 0;
+            -ms-flex: 0 0 calc(25% - 1px);
+                flex: 0 0 calc(25% - 1px); } }
     main section#works .works__row > .works__work-block > img {
       width: 100%;
       height: 100%; }

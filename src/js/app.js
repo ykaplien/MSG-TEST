@@ -40,9 +40,17 @@ window.onload = () => {
 
 	function mobileMenu(){
 		let menuList = document.getElementById('menuList');
+		let menuButtonImg = document.getElementById('menuButton__img');
 
 		menuList.style.display = menuList.style.display == 'block' ? 'none' : 'block';
 		menuList.classList.toggle('mobileMenu-show');
+		if (menuButtonImg.src == './img/hamburgerMune.svg') {
+			menuButtonImg.src = './img/close.svg';
+			console.log(menuButtonImg.src)
+		} else {
+			menuButtonImg.src = './img/hamburgerMune.svg';
+			console.log(menuButtonImg.src)
+		}
 	}
 
 	menuButton.addEventListener('click', mobileMenu, false);
