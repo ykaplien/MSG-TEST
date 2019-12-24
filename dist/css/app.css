@@ -10485,38 +10485,53 @@ main section#team {
 main section#testimonials .container-fluid, main section#testimonials .container-sm, main section#testimonials .container-md, main section#testimonials .container-lg, main section#testimonials .container-xl {
   padding: 0; }
 
-main section#testimonials .left-col > .testimonials-left > div > img.testimonial__image {
-  width: 100% !important;
-  height: auto !important; }
+main section#testimonials .mobile {
+  display: none; }
 
-main section#testimonials .right-col {
-  background-color: #53354A; }
-  main section#testimonials .right-col .testimonial__data {
-    width: 100%;
-    height: 100%;
-    color: #fff; }
-    main section#testimonials .right-col .testimonial__data > .testimonial__text {
-      font-family: Cardo;
-      font-style: italic;
-      font-size: 36px;
-      line-height: 42px; }
-
-main section#testimonials .testimonials-controls {
+main section#testimonials .slider {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
-  main section#testimonials .testimonials-controls > .testimonials-controls__item {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    -webkit-border-radius: 50%;
-       -moz-border-radius: 50%;
-            border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2); }
-    main section#testimonials .testimonials-controls > .testimonials-controls__item.tns-nav-active {
-      background-color: white; }
+  main section#testimonials .slider > .slider-left, main section#testimonials .slider .slider-right {
+    width: 50%; }
+    main section#testimonials .slider > .slider-left .slick-slide, main section#testimonials .slider .slider-right .slick-slide {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex; }
+  main section#testimonials .slider > .slider-left .left-item {
+    height: 100%; }
+    main section#testimonials .slider > .slider-left .left-item > img {
+      width: -webkit-calc(100% + 3px);
+      width: -moz-calc(100% + 3px);
+      width: calc(100% + 3px);
+      height: 100%; }
+  main section#testimonials .slider > .slider-right {
+    background-color: #53354A;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    main section#testimonials .slider > .slider-right .item-right {
+      padding: 0 10%;
+      color: #fff; }
+      main section#testimonials .slider > .slider-right .item-right > .slider-item__title {
+        font-family: Cardo;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 42px; }
+      main section#testimonials .slider > .slider-right .item-right > .slider-item__subtitle {
+        margin-top: 45px; }
 
 main section#download {
   text-align: center;

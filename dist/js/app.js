@@ -58,22 +58,38 @@ window.onload = function () {
   }
 
   menuButton.addEventListener('click', mobileMenu, false);
-  findOutMoreButton.addEventListener('click', featuresOverfill, false);
-  var slider = tns({
-    container: '.testimonials-left',
-    items: 1,
-    slideBy: 'page',
-    navContainer: '.testimonials-controls',
-    controls: false
+  findOutMoreButton.addEventListener('click', featuresOverfill, false); //  	let slider = tns({
+  //     container: '.testimonials-left',
+  //     items: 1,
+  //     slideBy: 'page',
+  //     navContainer: '.testimonials-controls',
+  //     controls: false
+  //   });
+  // let slider2 = tns({
+  //     container: '.testimonials-right',
+  //     items: 1,
+  //     // slideBy: 'page',
+  //     navContainer: '.testimonials-controls',
+  // 	animateIn: "fadeIn",
+  // 	animateOut: "fadeOut",
+  //     controls: false,
+  //     axis: 'vertical'
+  //   });
+
+  $('.slider-left').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-right'
   });
-  var slider2 = tns({
-    container: '.testimonials-right',
-    items: 1,
-    // slideBy: 'page',
-    navContainer: '.testimonials-controls',
-    animateIn: "fadeIn",
-    animateOut: "fadeOut",
-    controls: false,
-    axis: 'vertical'
+  console.log('test');
+  $('.slider-right').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    focusOnSelect: true,
+    asNavFor: '.slider-left'
   });
 };
