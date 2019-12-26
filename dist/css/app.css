@@ -10574,7 +10574,7 @@ main section#testimonials .slider {
         opacity: 1; }
     @media (min-width: 769px) {
       main section#testimonials .slider > .slider-left .slick-dots {
-        display: none; } }
+        display: none !important; } }
   main section#testimonials .slider > .slider-left .left-item {
     position: relative;
     height: 100%; }
