@@ -3,6 +3,9 @@
 window.onload = function () {
   var menuButton = document.getElementById('menuButton');
   var findOutMoreButton = document.getElementById('findOutMore');
+  var mobileBlur = document.querySelector('.mobile-blur');
+  var mobileMenu = document.querySelector('.mobile-menu');
+  var menuCloseBtn = document.querySelector('#menu-close');
 
   function featuresOverfill() {
     var featuresTitle = document.querySelectorAll('.feature__title');
@@ -42,48 +45,33 @@ window.onload = function () {
     });
   }
 
-  function mobileMenu() {
-    var menuList = document.getElementById('menuList');
-    var menuButtonImg = document.getElementById('menuButton__img');
-    menuList.style.display = menuList.style.display == 'block' ? 'none' : 'block';
-    menuList.classList.toggle('mobileMenu-show');
+  mobileMenu.querySelectorAll('.mobile-nav-list__link').forEach(function (item) {
+    item.addEventListener('click', menuHide);
+  });
 
-    if (menuButtonImg.src == './img/hamburgerMune.svg') {
-      menuButtonImg.src = './img/close.svg';
-      console.log(menuButtonImg.src);
-    } else {
-      menuButtonImg.src = './img/hamburgerMune.svg';
-      console.log(menuButtonImg.src);
-    }
+  function menuShow() {
+    document.body.style.overflow = 'hidden';
+    mobileBlur.style.filter = 'blur(10px)';
+    mobileMenu.style.display = 'flex';
   }
 
-  menuButton.addEventListener('click', mobileMenu, false);
-  findOutMoreButton.addEventListener('click', featuresOverfill, false); //  	let slider = tns({
-  //     container: '.testimonials-left',
-  //     items: 1,
-  //     slideBy: 'page',
-  //     navContainer: '.testimonials-controls',
-  //     controls: false
-  //   });
-  // let slider2 = tns({
-  //     container: '.testimonials-right',
-  //     items: 1,
-  //     // slideBy: 'page',
-  //     navContainer: '.testimonials-controls',
-  // 	animateIn: "fadeIn",
-  // 	animateOut: "fadeOut",
-  //     controls: false,
-  //     axis: 'vertical'
-  //   });
+  function menuHide() {
+    document.body.style.overflow = 'visible';
+    mobileBlur.style.filter = 'none';
+    mobileMenu.style.display = 'none';
+  }
 
+  findOutMoreButton.addEventListener('click', featuresOverfill);
+  menuButton.addEventListener('click', menuShow);
+  menuCloseBtn.addEventListener('click', menuHide);
   $('.slider-left').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
+    dots: true,
     asNavFor: '.slider-right'
   });
-  console.log('test');
   $('.slider-right').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -92,4 +80,9 @@ window.onload = function () {
     focusOnSelect: true,
     asNavFor: '.slider-left'
   });
+};
+
+window.onresize = function () {
+  $('.slider-left').slick('refresh');
+  $('.slider-right').slick('refresh');
 };
